@@ -4,10 +4,12 @@
     </button>
     <span>My Books</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        Login
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      Register
-    </button>
+    <div *ngIf="!loggedIn()">
+        <button mat-icon-button class="example-icon favorite-icon" (click)="redirectLogin()">
+            Login
+        </button>
+        <button mat-icon-button class="example-icon" (click)="redirectRegister()" >
+          Register
+        </button>
+    </div>
   </mat-toolbar>

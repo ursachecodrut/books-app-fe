@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { Token } from './models/token.model';
+import { Auth } from './models/auth.model';
 import { User } from './models/user.model';
 
 @Injectable({
@@ -12,14 +13,22 @@ export class AuthService {
 
   constructor(private http: HttpClient) {}
 
-  register(user: User): Observable<Token> {
+  register(user: Auth): Observable<Token> {
     return this.http.post<Token>(`${this.authUrl}/register`, user);
   }
 
-  login(user: User): Observable<Token> {
+  login(user: Auth): Observable<Token> {
     return this.http.post(`${this.authUrl}/login`, user).pipe(
       map((token) => {
         return this.saveToken(token as Token);
+      })
+    );
+  }
+
+  getId() {
+    return this.http.get(`${this.authUrl}/me`).pipe(
+      map((data) => {
+        localStorage.setItem('userId', (data as User).id);
       })
     );
   }
@@ -28,7 +37,7 @@ export class AuthService {
     localStorage.removeItem('access_token');
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return localStorage.getItem('access_token') ? true : false;
   }
 

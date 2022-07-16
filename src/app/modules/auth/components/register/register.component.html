@@ -1,4 +1,6 @@
+<div class="register-wrapper">
 <form [formGroup]="registerForm" (ngSubmit)="register()">
+    <h2>Register Form</h2>
     <mat-form-field appearance="fill">
       <mat-label>Enter your email</mat-label>
       <input matInput placeholder="pat@example.com" [formControl]="email" required>
@@ -11,4 +13,4 @@
     <br>
     <button mat-raised-button type="submit" color="primary" [disabled]="!registerForm.valid">Primary</button>
 </form>
-  
+</div>
