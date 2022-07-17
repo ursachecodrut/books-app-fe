@@ -2,9 +2,9 @@
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>My Books</span>
+    <span>Livresc</span>
     <span class="example-spacer"></span>
-    <div *ngIf="!loggedIn()">
+    <div *ngIf="!loggedIn(); else elseBlock">
         <button mat-icon-button class="example-icon favorite-icon" (click)="redirectLogin()">
             Login
         </button>
@@ -12,4 +12,9 @@
           Register
         </button>
     </div>
+    <ng-template #elseBlock>
+        <button mat-icon-button class="example-icon" (click)="logout()" >
+          Logout
+        </button>
+    </ng-template>
   </mat-toolbar>

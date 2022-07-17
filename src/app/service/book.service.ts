@@ -34,4 +34,14 @@ export class BookService {
       })
     );
   }
+
+  editBook(book: Book): Observable<Book> {
+    return this.http
+      .put<Book>(`${this.bookUrl}`, { bookId: book.id, ...book })
+      .pipe(
+        map((book) => {
+          return book;
+        })
+      );
+  }
 }

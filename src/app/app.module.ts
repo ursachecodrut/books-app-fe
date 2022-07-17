@@ -11,6 +11,7 @@ import { AuthGuard } from './modules/auth/guards/auth.guard';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { AddBookDialogComponent } from './components/add-book-dialog/add-book-dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { EditBookDialogComponent } from './components/edit-book-dialog/edit-book-dialog.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BookListComponent,
     ToolbarComponent,
     AddBookDialogComponent,
+    EditBookDialogComponent,
   ],
   imports: [
     BrowserModule,
