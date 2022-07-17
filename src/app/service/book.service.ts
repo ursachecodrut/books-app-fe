@@ -18,4 +18,12 @@ export class BookService {
       })
     );
   }
+
+  deleteBook(bookId: string): Observable<Book> {
+    return this.http.delete<Book>(`${this.bookUrl}`, { body: { bookId } }).pipe(
+      map((book) => {
+        return book;
+      })
+    );
+  }
 }
