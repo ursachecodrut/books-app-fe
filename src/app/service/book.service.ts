@@ -26,4 +26,12 @@ export class BookService {
       })
     );
   }
+
+  addBook(book: Book): Observable<Book> {
+    return this.http.post<Book>(`${this.bookUrl}`, { ...book }).pipe(
+      map((book) => {
+        return book;
+      })
+    );
+  }
 }

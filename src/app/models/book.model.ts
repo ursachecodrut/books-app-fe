@@ -3,9 +3,8 @@ export interface Book {
   createdAt: string;
   title: string;
   author: string;
-  publishedDate: string;
+  publishDate: string;
   genre: string;
   description: string;
   rating: number;
-  userId: string;
 }

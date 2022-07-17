@@ -1,0 +1,45 @@
+<div mat-dialog-content class="add-book-dialog">
+    <form [formGroup]="newBookForm"  (ngSubmit)="addNewBook()" class="add-book-form">
+        <h2>Login Form</h2>
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput formControlName="title" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Author</mat-label>
+          <input matInput formControlName="author" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+          <mat-label>Publish date</mat-label>
+          <input matInput formControlName="publishDate" required>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <textarea matInput formControlName="description" required></textarea>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Genre</mat-label>
+            <mat-select formControlName="genre">
+                <mat-option value="action">ACTION</mat-option>
+                <mat-option value="drama">DRAMA</mat-option>
+                <mat-option value="scifi">SCIFI</mat-option>
+                <mat-option value="romance">ROMANCE</mat-option>
+                <mat-option value="horror">HORROR</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Rating</mat-label>
+            <input type="number" max="5" matInput formControlName="rating" required>
+        </mat-form-field>
+        <br>
+        <div mat-dialog-actions>
+          <button mat-button mat-dialog-close>Cancel</button>
+          <button mat-button mat-dialog-close type="submit" cdkFocusInitial>Submit</button>
+        </div>
+    </form>
+</div>

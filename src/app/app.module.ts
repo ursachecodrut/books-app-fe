@@ -9,15 +9,23 @@ import { AuthModule } from './modules/auth/auth.module';
 import { MaterialModule } from './modules/material/material.module';
 import { AuthGuard } from './modules/auth/guards/auth.guard';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { AddBookDialogComponent } from './components/add-book-dialog/add-book-dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [AppComponent, BookListComponent, ToolbarComponent],
+  declarations: [
+    AppComponent,
+    BookListComponent,
+    ToolbarComponent,
+    AddBookDialogComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     AuthModule,
     MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
