@@ -4,19 +4,46 @@
 }
 
 .book-card {
-    min-width: 100px;
+    width: 250px;
 }
 
 .add-card {
     display: flex;
     justify-content: center;
     align-items: center;
-    
 }
 
 .add-book {
-    display: flex;
     justify-content: center;
     align-items: center;
     padding: 50px;
+}
+
+.book-card:hover {
+  transform: translateY(-5px) scale(1.005) translateZ(0);
+  transition-duration: 1000ms;
+  transition-delay: 1000ms;
+  box-shadow: 0 24px 36px rgba(0,0,0,0.11),
+    0 24px 46px var(--box-shadow-color);
+  border: 3px dotted #643cb4;
+  color: #643cb4;
+  background: #fff;
+}
+
+.mat-card{
+  display:flex;
+  flex-direction: column;
+}
+
+.mat-card-header {
+  flex-shrink: 0;
+}
+
+.mat-card-content{
+  flex-grow: 1;
+  overflow: auto;
+}
+
+.icon-display {
+   transform: scale(5);
 }
